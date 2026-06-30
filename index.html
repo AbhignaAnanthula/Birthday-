@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Birthday ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:Segoe UI,sans-serif;
+background:linear-gradient(135deg,#ff9a9e,#fad0c4);
+display:flex;
+justify-content:center;
+align-items:center;
+height:100vh;
+}
+
+.open-btn{
+padding:15px 35px;
+font-size:22px;
+border:none;
+border-radius:12px;
+background:#ff4081;
+color:white;
+cursor:pointer;
+transition:.3s;
+}
+
+.open-btn:hover{
+background:#e91e63;
+transform:scale(1.05);
+}
+
+.card{
+display:none;
+width:650px;
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 25px rgba(0,0,0,.3);
+animation:fadeIn 1s;
+}
+
+@keyframes fadeIn{
+from{
+opacity:0;
+transform:scale(.8);
+}
+to{
+opacity:1;
+transform:scale(1);
+}
+}
+
+.content{
+padding:30px;
+text-align:center;
+}
+
+.content h1{
+color:#ff4081;
+margin-bottom:20px;
+}
+
+.content p{
+font-size:20px;
+line-height:1.6;
+min-height:120px;
+}
+
+.buttons{
+margin-top:20px;
+}
+
+button{
+padding:12px 20px;
+margin:5px;
+border:none;
+border-radius:10px;
+background:#ff4081;
+color:white;
+font-size:16px;
+cursor:pointer;
+transition:.3s;
+}
+
+button:hover{
+background:#e91e63;
+}
+
+.photo{
+display:none;
+padding:20px;
+background:#ffe5ef;
+text-align:center;
+animation:fadeIn 1s;
+}
+
+.photo img{
+width:100%;
+max-width:450px;
+border-radius:15px;
+box-shadow:0 5px 15px rgba(0,0,0,.3);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<button class="open-btn" onclick="openCard()">🎁 Open Greeting Card</button>
+
+<div class="card" id="card">
+
+<div class="content">
+
+<h1>Happy Birthday PP ❤️</h1>
+
+<p id="wishText">
+Here is a surprise for you... 🎉
+Click any wish below.
+</p>
+
+<div class="buttons">
+
+<button onclick="showWish(1)">Wish 1</button>
+
+<button onclick="showWish(2)">Wish 2</button>
+
+<button onclick="showWish(3)">Wish 3</button>
+
+</div>
+
+<div class="buttons" id="photoBtn" style="display:none;">
+
+<button onclick="showPhoto()">📷 Show Our Photo</button>
+
+</div>
+
+</div>
+
+<div class="photo" id="photoSection">
+
+<!-- Replace photo.jpg with your own image -->
+<img src="photo.jpg" alt="Birthday Photo">
+
+</div>
+
+</div>
+
+<script>
+
+function openCard(){
+
+document.querySelector(".open-btn").style.display="none";
+
+document.getElementById("card").style.display="block";
+
+}
+
+function showWish(num){
+
+const wishes={
+
+1:"Happy Birthday to my sweetest, cutest and forever person. ❤️ Wishing you endless happiness, success and love. May your smile always shine brightly. 🎂🎉",
+
+2:"I'm truly grateful to have you in my life. ❤️ You're the most wonderful thing that has ever happened to me. I promise to always stand beside you and support you in every situation. 🤞🏻",
+
+3:"May all your dreams come true and your heart always stay filled with happiness, love and beautiful memories. Happy Birthday once again! 🥳✨"
+
+};
+
+document.getElementById("wishText").innerHTML=wishes[num];
+
+if(num===3){
+
+document.getElementById("photoBtn").style.display="block";
+
+}
+
+}
+
+function showPhoto(){
+
+document.getElementById("photoSection").style.display="block";
+
+document.getElementById("photoBtn").style.display="none";
+
+}
+
+</script>
+
+</body>
+</html>
